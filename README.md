@@ -13,7 +13,7 @@ resource "digitalocean_domain" "default" {
 }
 
 module "example_com_gsuite_email" {
-    source "github.com/radicalsloth/digitalocean_gsuite_email_records"
+    source = "github.com/radicalsloth/digitalocean_gsuite_email_records"
     tld = "example.com"
 }
 ```
