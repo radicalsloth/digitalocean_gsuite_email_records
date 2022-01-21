@@ -33,7 +33,7 @@ locals {
 }
 
 resource "digitalocean_record" "mx_records" {
-  for_each = local.gmail_mx_records
+  for_each = {for record in local.gmail_mx_records: record.value => record}
   domain   = var.tld
   type     = "MX"
   ttl      = 1800
